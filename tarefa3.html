@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Computação</title>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <p>Por favor preencha o formulário abaixo e
+         clique no botão Enviar Mensagem.
+          Agradecemos por seu contato.</p>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+    
+            <label for="Nome">Nome:</label>
+            <input type="text" name="Nome"><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" name="email"><br><br>
+    
+            <label for="site">Site:</label>
+            <input type="text" name="site"><br><br>
+    
+        </fieldset>
+
+        <fieldset>
+            <legend>Seu curso no Instituto de Computação</legend>
+
+            <label for="cc">Ciência da Computação</label> <input type="radio" name="curso" id="cc"> <br>
+
+            <label for="si">Sistemas de Informação</label> <input type="radio" name="curso" id="si"> <br>
+
+            <label for="es">Engenharia de Software</label> <input type="radio" name="curso" id="es">
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Assinale as linguagens já usadas por você</legend>
+
+            <label for="java">Java</label>
+            <input type="checkbox" name="linguagem" id="java">
+
+            <label for="c">C</label>
+            <input type="checkbox" name="linguagem" id="c">
+
+            <label for="c++">C++</label>
+            <input type="checkbox" name="linguagem" id="c++">
+
+            <label for="pearl">Pearl</label>
+            <input type="checkbox" name="linguagem" id="pearl">
+
+            <label for="python">Python</label>
+            <input type="checkbox" name="linguagem" id="python">
+
+            <label for="JavaScript">JavaScript</label>
+            <input type="checkbox" name="linguagem" id="JavaScript">
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados Complementares</legend>
+
+            <label for="cor">Cor Favorita</label>
+            <input type="color" name="cor" id="cor"> <br>
+
+            <label for="dataNas">Data de Nascimento</label>
+            <input type="date" name="dataNas" id="dataNas"> <br>
+
+            <label for="anoEntrada">Ano de entrada em seu curso do Icomp</label>
+            <input type="number" name="anoEntrada" id="anoEntrada"> <br>
+
+            <label for="notaSite">Nota para esse site</label>
+            <input type="range" name="notaSite" id="notaSite">
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Área de atuação</legend>
+
+            <label for="areaAtuacao">Nota para esse site</label>
+            <select name="areaAtuacao" id="areaAtuacao">
+                <option value="1">Banco de dados</option>
+                <option value="2">IA</option>
+            </select>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Submeta seu curriculo vitae</legend>
+
+            <input type="file">
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Digite sua mensagem</legend>
+
+            <textarea name="mensagem" id="mensagem">Este é o valor padrão</textarea>
+        </fieldset>
+
+        <input type="reset" name="resetar" value="Resetar Dados"> <input type="submit" name="enviar" value="Enviar Mensagem">
+
+</body>
+</html>
