@@ -1,6 +1,9 @@
 const fs = require('fs')
 const http = require('http')
 const dir = process.argv[2] || '.'
+const dotenv = require("dotenv")
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 const port = process.env.PORT || 3333;
 
