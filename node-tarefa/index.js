@@ -1,9 +1,9 @@
-const fs = require('fs');
-const http = require('http');
+import fs from 'fs';
+import http from 'http';
 const dir = process.argv[2] || '.';
-const path = require('path');
-const dotenv = require('dotenv');
-const link = require('./util');
+import path from 'path';
+import dotenv from 'dotenv';
+import { createLink } from './util.js';
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -22,7 +22,7 @@ const server = http.createServer(function (requisicao, resposta) {
       }
       resposta.write("<ul>");
       arquivos.forEach(arquivo => {
-        resposta.write(`<li>${link.createLink(arquivo)}</li>`);
+        resposta.write(`<li>${createLink(arquivo)}</li>`);
       });
       resposta.write("</ul>");
       resposta.end();
