@@ -1,0 +1,11 @@
+<h1>Editar curso</h1>
+
+<form action="/major/update/{{major.id}}" method="post">
+  <label for="name">Nome:</label><br>
+  <input type="text" id="name" name="name" value="{{major.name}}" required><br><br>
+
+  <label for="code">Código:</label><br>
+  <input type="text" id="code" name="code" value="{{major.code}}" required><br><br>
+
+  <button type="submit">Atualizar</button>
+</form>
