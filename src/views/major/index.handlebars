@@ -1,0 +1,30 @@
+<h1>Lista de Cursos (Majors)</h1>
+
+<a href="/major/create">+ Novo curso</a>
+
+<table border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Código</th>
+      {{!-- <th>Descrição</th> --}}
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each majors}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.code}}</td>
+        {{!-- <td>{{this.description}}</td> --}}
+        <td>
+          <a href="/major/read/{{this.id}}">Ver</a> |
+          <a href="/major/update/{{this.id}}">Editar</a> |
+          <form action="/major/remove/{{this.id}}" method="post" style="display:inline;">
+            <button type="submit" onclick="return confirm('Deseja remover este curso?')">Remover</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
