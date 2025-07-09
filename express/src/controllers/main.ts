@@ -30,7 +30,11 @@ const loremHandler = (req: Request, res: Response) => {
   const quantidade = Number(req.params.quant)
   
       if( quantidade >= 1){
-          res.send(lorem.generateParagraphs(quantidade))
+          const texto = lorem.generateParagraphs(quantidade);
+          res.render("main/lorem", {
+          texto,
+          title: "Lorem Ipsum Gerado"
+        });
       } else{
           throw createError(400, 'Requisição inválida');
       }

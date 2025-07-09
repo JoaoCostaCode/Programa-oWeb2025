@@ -1,0 +1,20 @@
+<h1>Editar usuário</h1>
+
+<form action="/user/update/{{user.id}}" method="post">
+  <label for="name">Nome:</label><br>
+  <input type="text" id="name" name="name" value="{{user.name}}" required><br><br>
+
+ <div class="row mb-3">
+    <label for="majorSelect" class="col-sm-2 col-form-label">Curso</label>
+    <div class="col-sm-5">
+      <select class="form-select" id="majorSelect" name="major_id" required>
+        <option selected disabled value="">Selecione um curso</option>
+        {{#each majors}}
+          <option value="{{this.id}}">{{this.name}} ({{this.code}})</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <button type="submit">Atualizar</button>
+</form>

@@ -1,4 +1,4 @@
-<h1>Cadastrar novo curso</h1>
+<h2>Cadastrar novo curso</h2>
 
 <form action="/major/create" method="post">
   <label for="name">Nome:</label><br>
@@ -7,5 +7,17 @@
   <label for="code">Código:</label><br>
   <input type="text" id="code" name="code" required><br><br>
 
-  <button type="submit">Cadastrar</button>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
+
+{{!-- <form>
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" id="name" name="name" required><br><br>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Código</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form> --}}

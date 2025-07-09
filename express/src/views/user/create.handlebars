@@ -1,0 +1,56 @@
+<h2>Cadastro:</h2>
+
+{{#if error}}
+  <div class="alert alert-danger" role="alert">
+    {{error}}
+  </div>
+{{/if}}
+
+<form method="POST" action="/user/create">
+ 
+  <div class="row mb-2">
+    <label for="nomeCadastro" class="col-sm-2 col-form-label">Nome</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="nomeCadastro" name="name" value="{{form.name}}" placeholder="Digite seu nome completo" required>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <label for="emailCadastro" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control" id="emailCadastro" name="email" value="{{form.email}}" placeholder="exemplo@email.com" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="senhaCadastro" class="col-sm-2 col-form-label">Senha</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="senhaCadastro" name="password" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="senhaCadastro" class="col-sm-2 col-form-label">Repita a senha</label>
+    <div class="col-sm-5">
+      <input type="password" class="form-control" id="confirmaSenhaCadastro" name="confirmPassword" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="majorSelect" class="col-sm-2 col-form-label">Curso</label>
+    <div class="col-sm-5">
+      <select class="form-select" id="majorSelect" name="major_id" required>
+        <option selected disabled value="">Selecione um curso</option>
+        {{#each majors}}
+          <option value="{{this.id}}">{{this.name}} ({{this.code}})</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <button type="submit" class="btn btn-primary">Realizar cadastro</button>
+    </div>
+  </div>
+</form>
