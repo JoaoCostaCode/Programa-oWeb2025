@@ -17,15 +17,34 @@ class Ship {
     this.element.style.left = `${TAMX / 2 - 50}px`
     space.element.appendChild(this.element)
   }
-  changeDirection(giro) { // -1 +1
+  changeDirection(giro) { 
     if (this.direction + giro >= 0 && this.direction + giro <= 2)
       this.direction = this.direction + giro
     this.element.src = directions[this.direction]
   }
-  move() {
-    if (this.direction === 0) this.element.style.left = `${parseInt(this.element.style.left) - 1}px`
-    if (this.direction === 2) this.element.style.left = `${parseInt(this.element.style.left) + 1}px`
+ move() {
+  const currentLeft = parseInt(this.element.style.left) || 0;
+  const shipWidth = this.element.offsetWidth;
+  const moveSpeed = 2; 
+
+  let newLeft = currentLeft;
+
+  if (this.direction === 0) {
+    newLeft = currentLeft - moveSpeed;
+  } else if (this.direction === 2) {
+    newLeft = currentLeft + moveSpeed;
   }
+
+  const minLeft = 0;
+  const maxLeft = TAMX - shipWidth;
+
+  if (newLeft < minLeft) newLeft = minLeft;
+  if (newLeft > maxLeft) newLeft = maxLeft;
+
+  this.element.style.left = `${newLeft}px`;
+}
 }
 
 export const ship = new Ship()
+
+ship.danificada = false;

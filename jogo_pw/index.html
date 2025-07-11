@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div id="space"></div>
-    <script type="module" src="js/game.js"></script>
+   <div id="space">
+    <div id="hud">
+     <span id="pontos">Pontuação: 0</span>
+      <span id="vidas">
+      <img src="/assets/png/life.png" class="life">
+      <img src="/assets/png/life.png" class="life">
+      <img src="/assets/png/life.png" class="life">
+    </span>
+    </div>
+  </div>
+  <div id="gameOver" style="display: none;">
+  <h1>Game Over</h1>
+  <button id="btnReiniciar">Reiniciar</button>
+</div>
+
+    <script type="module" src="/js/game.js"></script>
   </body>
 </html>
