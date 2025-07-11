@@ -6,3 +6,7 @@ export function listTech(tech: Technologies[]) {
     .map((p) => `<li>${p.name} - ${p.type}</li>`);
   return `<ul>${list.join('')}</ul>`;
 }
+
+export function inc(value: number) {
+  return value + 1;
+}

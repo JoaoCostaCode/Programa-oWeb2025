@@ -1,31 +1,22 @@
-<h2>Login:</h2>
-
 {{#if error}}
   <div class="alert alert-danger" role="alert">
     {{error}}
   </div>
 {{/if}}
+<h2>Login:</h2>
 
 <form method="POST" action="/user/login">
- 
   <div class="row mb-2">
-    <label for="nomeCadastro" class="col-sm-2 col-form-label">Nome</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="nomeCadastro" name="name" value="{{form.name}}" placeholder="Digite seu nome completo" required>
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <label for="emailCadastro" class="col-sm-2 col-form-label">Email</label>
+    <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-5">
       <input type="email" class="form-control" id="emailLogin" name="email" value="{{form.email}}" placeholder="exemplo@email.com" required>
     </div>
   </div>
 
   <div class="row mb-3">
-    <label for="senhaCadastro" class="col-sm-2 col-form-label">Senha</label>
+    <label for="senhaLogin" class="col-sm-2 col-form-label">Senha</label>
     <div class="col-sm-5">
-      <input type="password" class="form-control" id="senhalogin" name="senha" required>
+      <input type="password" class="form-control" id="senhaLogin" name="password" required>
     </div>
   </div>
 

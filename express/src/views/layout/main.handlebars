@@ -28,25 +28,30 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sobre">Sobre</a>
+      {{#if user}}
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user/create">Realizar Cadastro</a>
+          <a class="nav-link" href="/main/ranking">Ver Ranking</a>
         </li>
+      {{/if}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Handlebars
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/hb1">HB1</a></li>
-            <li><a class="dropdown-item" href="/hb2">HB2</a></li>
-            <li><a class="dropdown-item" href="/hb3">HB3</a></li>
-            <li><a class="dropdown-item" href="/hb4">HB4</a></li>
-            <li><a class="dropdown-item" href="/lorem/:quant">LOREM</a></li>
-            <li><a class="dropdown-item" href="/major/create">Criar Curso</a></li>
-             <li><a class="dropdown-item" href="/user/index">Ver usuários</a></li>
-              <li><a class="dropdown-item" href="/user/login">Login</a></li>
-          </ul>
-        </li>
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{#if user.name}}
+      {{user.name}}
+    {{else}}
+      Conta
+    {{/if}}
+  </a>
+  <ul class="dropdown-menu">
+    {{#if user}}
+      <li><a class="dropdown-item" href="/user/update/{{user.id}}">Alterar dados</a></li>
+      <li><a class="dropdown-item" href="/user/password">Alterar Senha</a></li>
+      <li><a class="dropdown-item" href="/user/logout">Encerrar sessão</a></li>
+    {{else}}
+      <li><a class="dropdown-item" href="/user/login">Realizar Login</a></li>
+      <li><a class="dropdown-item" href="/user/create">Realizar Cadastro</a></li>
+    {{/if}}
+  </ul>
+</li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Desativado</a>
         </li>

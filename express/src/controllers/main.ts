@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { LoremIpsum } from "lorem-ipsum";
 import createError from 'http-errors';
-import { title } from 'process';
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -15,8 +14,7 @@ const lorem = new LoremIpsum({
 });
 
 const index = (req: Request, res: Response) => {
- res.render("main/principal",{
-    title: "Página principal"
+ res.render("main/jogo",{
  })
 };
 

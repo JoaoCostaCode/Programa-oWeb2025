@@ -50,4 +50,14 @@ export const removeUser = async (id: string): Promise<User> => {
   return prisma.user.delete({ where: { id } })
 }
 
+export async function validateUser(email: string, password: string) {
+  const user = await prisma.user.findUnique({ where: { email } })
+
+  if (!user) return null
+
+  const passwordValid = await bcrypt.compare(password, user.password)
+  if (!passwordValid) return null
+
+  return user
+}
 
