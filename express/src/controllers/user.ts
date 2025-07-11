@@ -47,21 +47,27 @@ const read = async (req: Request, res: Response) => {
 }
 
 const update = async (req: Request, res: Response) => {
-  const { id } = req.params
+  const { id } = req.params;
 
   if (req.method === 'GET') {
-    const user = await service.getUser(id)
-    const majors = await majorService.getAllMajors()
-    return res.render('user/update', { user, majors })
+    const user = await service.getUser(id);
+    const majors = await majorService.getAllMajors();
+    return res.render('user/update', { user, majors });
   }
 
   try {
-    await service.updateUser(id, req.body)
-    res.redirect('/')
+    await service.updateUser(id, req.body);
+
+    const updatedUser = await service.getUser(id);
+
+    (req.session as any).user = updatedUser;
+
+    res.redirect('/');
   } catch (err) {
-    res.status(500).send(err)
+    res.status(500).send(err);
   }
-}
+};
+
 
 const remove = async (req: Request, res: Response) => {
   const { id } = req.params

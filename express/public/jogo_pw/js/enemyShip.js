@@ -45,7 +45,7 @@ const tiposInimigos = [
 
 class EnemyShip {
   constructor(tipo) {
-    this.tipo = tipo; // guarda o tipo para saber pontuação depois
+    this.tipo = tipo; 
 
     this.element = document.createElement("img");
     this.element.className = "enemy-ship " + tipo.nome;
@@ -54,7 +54,7 @@ class EnemyShip {
     this.element.style.top = "-20px";
     this.element.style.left = `${Math.random() * (TAMX - 40)}px`;
 
-    // velocidade aleatória dentro do intervalo do tipo
+  
     const [minSpeed, maxSpeed] = tipo.velocidade;
     this.speed = (Math.random() * (maxSpeed - minSpeed) + minSpeed) * getDificuldade();
 
@@ -82,7 +82,7 @@ export const moveEnemyShips = () => {
     inimigo.move();
 
     const topAtual = parseFloat(inimigo.element.style.top);
-    const alturaMaxima = 900; // altura da sua área de jogo (#space)
+    const alturaMaxima = 900; 
 
     if (topAtual > alturaMaxima) {
       inimigo.element.remove();

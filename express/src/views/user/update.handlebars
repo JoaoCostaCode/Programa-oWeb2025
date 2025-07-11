@@ -1,10 +1,27 @@
-<h1>Editar usuário</h1>
+<h2>Editar usuário</h2>
+
+{{#if error}}
+  <div class="alert alert-danger" role="alert">
+    {{error}}
+  </div>
+{{/if}}
 
 <form action="/user/update/{{user.id}}" method="post">
-  <label for="name">Nome:</label><br>
-  <input type="text" id="name" name="name" value="{{user.name}}" required><br><br>
+  <div class="row mb-2">
+    <label for="name" class="col-sm-2 col-form-label">Nome</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="name" name="name" value="{{user.name}}" placeholder="Digite seu nome completo" required>
+    </div>
+  </div>
 
- <div class="row mb-3">
+  <div class="row mb-2">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control" id="email" name="email" value="{{user.email}}" placeholder="exemplo@email.com" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
     <label for="majorSelect" class="col-sm-2 col-form-label">Curso</label>
     <div class="col-sm-5">
       <select class="form-select" id="majorSelect" name="major_id" required>
@@ -16,5 +33,9 @@
     </div>
   </div>
 
-  <button type="submit">Atualizar</button>
+  <div class="row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <button type="submit" class="btn btn-primary">Atualizar</button>
+    </div>
+  </div>
 </form>

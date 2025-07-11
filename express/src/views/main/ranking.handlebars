@@ -1,20 +1,24 @@
-<h1>Ranking dos 10 melhores jogadores</h1>
+<div class="container mt-4">
+  <h2 class="mb-4"> Ranking dos 10 melhores jogadores</h2>
 
-<table border="1" cellpadding="5" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Posição</th>
-      <th>Nome do Jogador</th>
-      <th>Pontuação Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each ranking}}
-      <tr>
-        <td>{{inc @index}}</td>
-        <td>{{this.userName}}</td>
-        <td>{{this.totalScore}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Posição</th>
+          <th>Nome do Jogador</th>
+          <th>Pontuação Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each ranking}}
+          <tr>
+            <td>{{inc @index}}</td>
+            <td>{{this.userName}}</td>
+            <td>{{this.totalScore}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

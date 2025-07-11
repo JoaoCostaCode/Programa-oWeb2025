@@ -17,7 +17,7 @@ class Ship {
     this.element.style.left = `${TAMX / 2 - 50}px`
     space.element.appendChild(this.element)
   }
-  changeDirection(giro) { // -1 +1
+  changeDirection(giro) { 
     if (this.direction + giro >= 0 && this.direction + giro <= 2)
       this.direction = this.direction + giro
     this.element.src = directions[this.direction]
@@ -25,7 +25,7 @@ class Ship {
  move() {
   const currentLeft = parseInt(this.element.style.left) || 0;
   const shipWidth = this.element.offsetWidth;
-  const moveSpeed = 2; // você pode ajustar
+  const moveSpeed = 2; 
 
   let newLeft = currentLeft;
 
@@ -35,7 +35,6 @@ class Ship {
     newLeft = currentLeft + moveSpeed;
   }
 
-  // Aplicar limites
   const minLeft = 0;
   const maxLeft = TAMX - shipWidth;
 

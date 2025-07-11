@@ -8,7 +8,6 @@ export const getAllUsers = async (): Promise<User[]> => {
   return prisma.user.findMany({
     include: {
       major: true,
-      // gameSessions: true
     }
   })
 }
@@ -31,7 +30,6 @@ export const getUser = async (id: string): Promise<User | null> => {
     where: { id },
     include: {
       major: true,
-      // gameSessions: true
     }
   })
 }
